@@ -1,4 +1,5 @@
 precision mediump float;
+uniform float u_time;
 
 varying vec2 v_uv;
 
@@ -10,6 +11,6 @@ float random (vec2 st) {
 }
 
 void main() {
-    vec3 color = random(v_uv)*vec3(1.0);
+    vec3 color = random(v_uv * u_time)*vec3(1.0);
     gl_FragColor = vec4(color, 1.0);
 }
